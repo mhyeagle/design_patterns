@@ -15,7 +15,7 @@ abstract class AbstractLogger implements Logger {
     }
 
     public void logMessage(int level, String msg) {
-        if (this.level < level) {
+        if (this.level <= level) {
             write(msg);
         }
 

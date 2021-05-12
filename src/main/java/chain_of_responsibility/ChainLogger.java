@@ -3,8 +3,6 @@ package chain_of_responsibility;
 import lombok.Getter;
 import lombok.Setter;
 
-@Getter
-@Setter
 public class ChainLogger {
     private static ChainLogger instance;
 
@@ -21,7 +19,7 @@ public class ChainLogger {
         return instance;
     }
 
-    public static void logMessage(int level, String msg) {
+    public void logMessage(int level, String msg) {
         instance.getDebugLogger().logMessage(level, msg);
     }
 
@@ -38,5 +36,9 @@ public class ChainLogger {
         if (instance == null) {
             instance = chainLogger;
         }
+    }
+
+    private DebugLogger getDebugLogger() {
+        return this.debugLogger;
     }
 }

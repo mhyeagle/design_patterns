@@ -5,5 +5,5 @@ package chain_of_responsibility;
  * main methods
  */
 public interface Logger {
-    void write(String msg);
+    void doWrite(String msg);
 }

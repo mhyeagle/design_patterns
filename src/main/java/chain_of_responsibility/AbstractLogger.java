@@ -1,11 +1,7 @@
 package chain_of_responsibility;
 
 abstract class AbstractLogger implements Logger {
-    public static final int DEBUG = 1;
-    public static final int INFO =2;
-    public static final int ERROR = 3;
-
-    protected int level;
+    LogLevel level;
 
     // next logger in the chain
     protected AbstractLogger nextLogger;
@@ -15,10 +11,13 @@ abstract class AbstractLogger implements Logger {
     }
 
     public void logMessage(int level, String msg) {
+        // common operation
         if (this.level <= level) {
-            write(msg);
+            // need to implement in child class
+            doWrite(msg);
         }
 
+        // common operation
         if (nextLogger != null) {
             nextLogger.logMessage(level, msg);
         }

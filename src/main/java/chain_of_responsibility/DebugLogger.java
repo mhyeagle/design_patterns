@@ -6,7 +6,7 @@ public class DebugLogger extends AbstractLogger {
     }
 
     @Override
-    public void write(String msg) {
+    public void doWrite(String msg) {
         System.out.println("DEBUG log:" + msg);
     }
 }

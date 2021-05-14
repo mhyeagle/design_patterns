@@ -16,7 +16,7 @@ public class SingleChainLogger {
         return instance;
     }
 
-    public void logMessage(int level, String msg) {
+    public void logMessage(LogLevel level, String msg) {
         instance.getDebugLogger().logMessage(level, msg);
     }
 

@@ -10,16 +10,16 @@ abstract class AbstractLogger implements Logger {
         nextLogger = logger;
     }
 
-    public void logMessage(int level, String msg) {
+    public void logMessage(LogLevel logLevel, String msg) {
         // common operation
-        if (this.level <= level) {
+        if (this.level.getLevel() <= logLevel.getLevel()) {
             // need to implement in child class
             doWrite(msg);
         }
 
         // common operation
         if (nextLogger != null) {
-            nextLogger.logMessage(level, msg);
+            nextLogger.logMessage(logLevel, msg);
         }
     }
 }

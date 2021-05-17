@@ -1,7 +1,5 @@
 package chain_of_responsibility;
 
-import org.jetbrains.annotations.NotNull;
-
 public enum LogLevel {
     DEBUG(1, "debug log"),
     INFO(2, "info log"),
@@ -30,7 +28,7 @@ public enum LogLevel {
         return this.level;
     }
 
-    public int compare(@NotNull LogLevel log) {
+    public int compare(LogLevel log) {
         return this.level - log.level;
     }
 }

@@ -1,0 +1,4 @@
+public static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces, InvocationHandler h)
+loader表示类加载器，和IService一样的loader
+interfaces表示代理类要实现的接口列表，是一个数组，元素的类型只能是接口，不能是普通的类，例子中只有一个IService
+h的类型为InvocationHandler，是一个接口，定义在java.lang.reflect包中，只定义了一个方法invoke，对代理接口所有的方法调用都会转给该方法

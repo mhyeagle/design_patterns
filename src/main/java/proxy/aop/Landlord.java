@@ -2,7 +2,7 @@ package proxy.aop;
 
 import org.springframework.stereotype.Component;
 
-@Component("landlord")
+@Component
 public class Landlord {
     public void bussiness() {
         System.out.println("签合同");
